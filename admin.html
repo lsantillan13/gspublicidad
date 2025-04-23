@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-800 text-white flex flex-col">
+            <div class="p-4 text-center text-2xl font-bold border-b border-gray-700">Admin Dashboard</div>
+            <nav class="flex-1 p-4">
+                <ul id="categoryList" class="sortable">
+                    <li class="mb-4 cursor-move">
+                        <a href="#" class="block p-2 rounded hover:bg-gray-700">Home</a>
+                    </li>
+                    <li class="mb-4 cursor-move">
+                        <a href="#" class="block p-2 rounded hover:bg-gray-700">New Product</a>
+                    </li>
+                    <li class="mb-4 cursor-move">
+                        <a href="#" class="block p-2 rounded hover:bg-gray-700">Modify Product</a>
+                    </li>
+                    <li class="mb-4 cursor-move">
+                        <a href="#" class="block p-2 rounded hover:bg-gray-700">Settings</a>
+                    </li>
+                </ul>
+                <!-- Buttons for Save/Cancel -->
+                <div class="mt-4">
+                    <button id="saveChanges" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mr-2">
+                        Guardar Cambios
+                    </button>
+                    <button id="cancelChanges" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                        Cancelar
+                    </button>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <h1 class="text-3xl font-bold mb-6">Customize Index Page</h1>
+
+            <!-- Drag and Drop Section -->
+            <div>
+                <h2 class="text-xl font-semibold mb-4">Background Image Sections</h2>
+                <div id="sections" class="grid grid-cols-1 gap-4">
+                    <div class="bg-white p-4 rounded shadow cursor-move" data-section="1">Section 1</div>
+                    <div class="bg-white p-4 rounded shadow cursor-move" data-section="2">Section 2</div>
+                    <div class="bg-white p-4 rounded shadow cursor-move" data-section="3">Section 3</div>
+                </div>
+            </div>
+
+            <!-- Background Image Selector -->
+            <div class="mt-6">
+                <h2 class="text-xl font-semibold mb-4">Change Background Image</h2>
+                <label class="block mb-2 text-gray-700">Upload Background Image:</label>
+                <input type="file" id="backgroundImage" class="block w-full p-2 border rounded">
+                <button id="applyBackground" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    Apply Background
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Drag and Drop functionality for sections in the main content
+        const sections = document.getElementById('sections');
+        new Sortable(sections, {
+            animation: 150,
+            onEnd: function () {
+                const newOrder = Array.from(sections.children).map(item => item.textContent.trim());
+                console.log('New section order:', newOrder);
+            }
+        });
+    
+        // Save Changes button for sections
+        const saveChanges = document.getElementById('saveChanges');
+        saveChanges.addEventListener('click', () => {
+            const newOrder = Array.from(sections.children).map(item => item.textContent.trim());
+            console.log('New section order saved:', newOrder);
+            alert('Changes saved successfully!');
+        });
+    
+        // Cancel Changes button for sections
+        const cancelChanges = document.getElementById('cancelChanges');
+        cancelChanges.addEventListener('click', () => {
+            // Restore the initial order of sections
+            const initialOrder = ['Section 1', 'Section 2', 'Section 3'];
+            sections.innerHTML = '';
+            initialOrder.forEach(section => {
+                const div = document.createElement('div');
+                div.className = 'bg-white p-4 rounded shadow cursor-move';
+                div.textContent = section;
+                sections.appendChild(div);
+            });
+            alert('Changes canceled.');
+        });
+    </script>
+</body>
+
+</html>

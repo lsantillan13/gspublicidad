@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - GSPublicidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .section-item {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .section-item.moving {
+            opacity: 0.5;
+            transform: scale(0.98);
+        }
+        .section-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .editable {
+            cursor: pointer;
+            border-bottom: 1px dashed #999;
+        }
+        .editable:hover {
+            background-color: #f0f0f0;
+        }
+        .promo-block {
+            transition: all 0.2s ease;
+        }
+        .promo-block:hover {
+            transform: scale(1.02);
+        }
+        .section-preview {
+            background-size: cover;
+            background-position: center;
+        }
+
+
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-gray-800 text-white p-4 flex flex-col">
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold flex items-center">
+                    <span class="material-icons mr-2">admin_panel_settings</span>
+                    GS Admin
+                </h1>
+                <p class="text-sm text-gray-400 mt-1">Panel de control de contenidos</p>
+            </div>
+            <nav class="flex-1">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#" class="flex items-center p-2 bg-blue-700 rounded">
+                            <span class="material-icons mr-2">home</span>
+                            Home Page
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded">
+                            <span class="material-icons mr-2">category</span>
+                            Categorías
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded">
+                            <span class="material-icons mr-2">shopping_cart</span>
+                            Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded">
+                            <span class="material-icons mr-2">image</span>
+                            Media
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded">
+                            <span class="material-icons mr-2">settings</span>
+                            Configuración
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="pt-4 border-t border-gray-700">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-2">
+                        <span class="material-icons text-white text-sm">person</span>
+                    </div>
+                    <span class="text-sm">Administrador</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8 overflow-auto">
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h2 class="text-3xl font-bold">Administración de Home</h2>
+                    <p class="text-gray-600">Organiza las secciones de tu página principal</p>
+                </div>
+                <button id="add-section-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded flex items-center transition-colors">
+                    <span class="material-icons mr-2">add</span>
+                    Nueva Sección
+                </button>
+            </div>
+
+            <!-- Secciones de la Home -->
+            <div class="grid gap-8" id="sections-container">
+                <!-- Sección 1 - Ejemplo de Categorías -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden section-item" data-section-id="sec1">
+                    <div class="bg-gray-800 text-white p-4 flex justify-between items-center">
+                        <div class="flex items-center">
+                            <span class="material-icons mr-2 cursor-move handle">drag_handle</span>
+                            <h3 class="text-xl font-semibold editable" data-field="title">Principales Categorías</h3>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-300 hover:text-white p-1 rounded-full hover:bg-gray-700" title="Mover arriba" data-section-id="sec1">
+                                <span class="material-icons">arrow_upward</span>
+                            </button>
+                            <button class="text-gray-300 hover:text-white p-1 rounded-full hover:bg-gray-700" title="Mover abajo" data-section-id="sec1">
+                                <span class="material-icons">arrow_downward</span>
+                            </button>
+                            <button class="text-red-400 hover:text-red-300 p-1 rounded-full hover:bg-gray-700" title="Eliminar sección">
+                                <span class="material-icons">delete</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Tipo de Sección</label>
+                                <select class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <option selected>Lista de Categorías</option>
+                                    <option>Bloques Promocionales</option>
+                                    <option>Productos Destacados</option>
+                                    <option>Banner Promocional</option>
+                                    <option>HTML Personalizado</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Visibilidad</label>
+                                <select class="w-full p-2 border rounded-lg">
+                                    <option selected>Visible</option>
+                                    <option>Oculto</option>
+                                    <option>Programado</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Orden</label>
+                                <input type="number" value="1" class="w-full p-2 border rounded-lg">
+                            </div>
+                        </div>
+
+                        <!-- Lista de categorías -->
+                        <div class="border rounded-lg overflow-hidden mb-6">
+                            <div class="bg-gray-100 p-3 flex justify-between items-center">
+                                <h4 class="font-medium text-gray-700">Categorías en esta sección</h4>
+                                <button class="text-blue-600 hover:text-blue-800 flex items-center text-sm">
+                                    <span class="material-icons mr-1 text-base">add</span>
+                                    Agregar Categoría
+                                </button>
+                            </div>
+                            <ul class="divide-y" id="categories-list">
+                                <li class="p-3 flex justify-between items-center hover:bg-gray-50 group">
+                                    <div class="flex items-center">
+                                        <span class="material-icons mr-2 text-gray-400 group-hover:text-gray-600 handle">drag_handle</span>
+                                        <span class="editable" data-field="category-name">Vuelta al Cole</span>
+                                    </div>
+                                    <div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <button class="text-gray-500 hover:text-gray-700 p-1">
+                                            <span class="material-icons text-base">edit</span>
+                                        </button>
+                                        <button class="text-red-500 hover:text-red-700 p-1">
+                                            <span class="material-icons text-base">delete</span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="p-3 flex justify-between items-center hover:bg-gray-50 group">
+                                    <div class="flex items-center">
+                                        <span class="material-icons mr-2 text-gray-400 group-hover:text-gray-600 handle">drag_handle</span>
+                                        <span class="editable" data-field="category-name">Aire Libre</span>
+                                    </div>
+                                    <div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <button class="text-gray-500 hover:text-gray-700 p-1">
+                                            <span class="material-icons text-base">edit</span>
+                                        </button>
+                                        <button class="text-red-500 hover:text-red-700 p-1">
+                                            <span class="material-icons text-base">delete</span>
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Configuración de diseño -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Color de Fondo</label>
+                                <div class="flex items-center">
+                                    <input type="color" value="#ffffff" class="w-10 h-10 cursor-pointer">
+                                    <input type="text" value="#FFFFFF" class="ml-2 p-2 border rounded-lg flex-1 font-mono text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Imagen de Fondo</label>
+                                <div class="flex items-center">
+                                    <input type="file" class="hidden" id="bg-upload-sec1">
+                                    <label for="bg-upload-sec1" class="cursor-pointer bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-l-lg transition-colors">
+                                        Subir Imagen
+                                    </label>
+                                    <span class="bg-gray-100 px-4 py-2 rounded-r-lg flex-1 truncate text-sm">background-default.jpg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 2 - Ejemplo de Bloques Promocionales -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden section-item" data-section-id="sec2">
+                    <div class="bg-gray-800 text-white p-4 flex justify-between items-center">
+                        <div class="flex items-center">
+                            <span class="material-icons mr-2 cursor-move handle">drag_handle</span>
+                            <h3 class="text-xl font-semibold editable" data-field="title">Equipamiento Industrial Personalizado</h3>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="text-gray-300 hover:text-white p-1 rounded-full hover:bg-gray-700" title="Mover arriba">
+                                <span class="material-icons">arrow_upward</span>
+                            </button>
+                            <button class="text-gray-300 hover:text-white p-1 rounded-full hover:bg-gray-700" title="Mover abajo">
+                                <span class="material-icons">arrow_downward</span>
+                            </button>
+                            <button class="text-red-400 hover:text-red-300 p-1 rounded-full hover:bg-gray-700" title="Eliminar sección">
+                                <span class="material-icons">delete</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Tipo de Sección</label>
+                                <select class="w-full p-2 border rounded-lg">
+                                    <option>Lista de Categorías</option>
+                                    <option selected>Bloques Promocionales</option>
+                                    <option>Productos Destacados</option>
+                                    <option>Banner Promocional</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Estilo</label>
+                                <select class="w-full p-2 border rounded-lg">
+                                    <option selected>Iconos + Texto</option>
+                                    <option>Imágenes</option>
+                                    <option>Tarjetas</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Columnas</label>
+                                <select class="w-full p-2 border rounded-lg">
+                                    <option>2</option>
+                                    <option selected>4</option>
+                                    <option>6</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Bloques promocionales -->
+                        <div class="mb-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <h4 class="font-medium text-gray-700">Bloques Promocionales</h4>
+                                <button id="add-block-btn" class="text-blue-600 hover:text-blue-800 flex items-center text-sm">
+                                    <span class="material-icons mr-1 text-base">add</span>
+                                    Agregar Bloque
+                                </button>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="promo-blocks-container">
+                                <!-- Bloque 1 -->
+                                <div class="promo-block border rounded-lg p-4 bg-white hover:shadow-md cursor-move" draggable="true">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <span class="text-2xl">👞</span>
+                                        <div class="flex space-x-1">
+                                            <button class="text-gray-500 hover:text-gray-700 p-1">
+                                                <span class="material-icons text-base">edit</span>
+                                            </button>
+                                            <button class="text-red-500 hover:text-red-700 p-1">
+                                                <span class="material-icons text-base">delete</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold editable" data-field="block-title">CALZADOS</h5>
+                                        <p class="text-sm text-gray-600 editable" data-field="block-desc">Calzados de seguridad industrial</p>
+                                        <div class="mt-3">
+                                            <label class="block text-xs text-gray-500 mb-1">Acción:</label>
+                                            <div class="flex items-center">
+                                                <input type="text" value="Ver producto" class="text-sm p-1 border rounded w-24 editable-input hidden">
+                                                <span class="editable text-sm text-blue-600" data-field="block-action">Ver producto</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Bloque 2 -->
+                                <div class="promo-block border rounded-lg p-4 bg-white hover:shadow-md cursor-move" draggable="true">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <span class="text-2xl">👔</span>
+                                        <div class="flex space-x-1">
+                                            <button class="text-gray-500 hover:text-gray-700 p-1">
+                                                <span class="material-icons text-base">edit</span>
+                                            </button>
+                                            <button class="text-red-500 hover:text-red-700 p-1">
+                                                <span class="material-icons text-base">delete</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold editable" data-field="block-title">MAMELUCOS</h5>
+                                        <p class="text-sm text-gray-600 editable" data-field="block-desc">Mamelucos gabardina gráfa</p>
+                                        <div class="mt-3">
+                                            <label class="block text-xs text-gray-500 mb-1">Acción:</label>
+                                            <div class="flex items-center">
+                                                <input type="text" value="Ver producto" class="text-sm p-1 border rounded w-24 editable-input hidden">
+                                                <span class="editable text-sm text-blue-600" data-field="block-action">Ver producto</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Más bloques... -->
+                            </div>
+                        </div>
+
+                        <!-- Vista previa -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-medium text-gray-700 mb-3">Vista Previa</h4>
+                            <div class="section-preview p-6 rounded border" style="background-color: #f8fafc;">
+                                <h3 class="text-xl font-semibold mb-4">Equipamiento Industrial Personalizado</h3>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                    <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                                        <div class="text-3xl mb-2">👞</div>
+                                        <h4 class="font-medium">CALZADOS</h4>
+                                        <p class="text-sm text-gray-600 mt-1">Calzados de seguridad industrial</p>
+                                        <button class="mt-3 text-sm text-blue-600 hover:text-blue-800">Ver producto</button>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                                        <div class="text-3xl mb-2">👔</div>
+                                        <h4 class="font-medium">MAMELUCOS</h4>
+                                        <p class="text-sm text-gray-600 mt-1">Mamelucos gabardina gráfa</p>
+                                        <button class="mt-3 text-sm text-blue-600 hover:text-blue-800">Ver producto</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para nueva sección -->
+    <div id="new-section-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-xl p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-semibold">Nueva Sección</h3>
+                <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 mb-2">Título</label>
+                    <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Tipo</label>
+                    <select class="w-full p-2 border rounded-lg">
+                        <option value="category">Lista de Categorías</option>
+                        <option value="promo">Bloques Promocionales</option>
+                        <option value="products">Productos Destacados</option>
+                        <option value="banner">Banner</option>
+                    </select>
+                </div>
+                <div class="pt-2 flex justify-end space-x-3">
+                    <button id="cancel-modal" class="px-4 py-2 border rounded-lg hover:bg-gray-100">Cancelar</button>
+                    <button id="confirm-modal" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Crear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Estado global de la aplicación
+        const appState = {
+            sections: [],
+            currentEditing: null
+        };
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            initEditableElements();
+            initDragAndDrop();
+            initModals();
+            // Aquí podrías cargar las secciones desde una API
+            // loadSections();
+        });
+
+        // Funciones para elementos editables
+        function initEditableElements() {
+            document.querySelectorAll('.editable').forEach(element => {
+                element.addEventListener('dblclick', function() {
+                    const currentValue = this.textContent;
+                    const fieldType = this.getAttribute('data-field');
+                    const inputType = fieldType === 'block-desc' ? 'textarea' : 'input';
+                    
+                    const input = document.createElement(inputType);
+                    input.value = currentValue;
+                    input.className = 'w-full p-1 border rounded focus:ring-2 focus:ring-blue-500';
+                    
+                    this.replaceWith(input);
+                    input.focus();
+                    
+                    input.addEventListener('blur', saveChanges);
+                    input.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' && inputType !== 'textarea') {
+                            e.preventDefault();
+                            saveChanges.call(this);
+                        }
+                    });
+                    
+                    function saveChanges() {
+                        const newValue = this.value;
+                        const span = document.createElement('span');
+                        span.className = 'editable';
+                        span.setAttribute('data-field', fieldType);
+                        span.textContent = newValue;
+                        
+                        this.replaceWith(span);
+                        span.addEventListener('dblclick', arguments.callee.caller);
+                        
+                        // Actualizar vista previa
+                        updatePreview();
+                    }
+                });
+            });
+        }
+
+        function initSectionOrderControls() {
+            const container = document.getElementById('sections-container');
+
+            // Evento para mover arriba
+            document.querySelectorAll('.move-up-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const sectionId = btn.dataset.sectionId;
+                    const currentSection = document.querySelector(`[data-section-id="${sectionId}"]`);
+                    const prevSection = currentSection.previousElementSibling;
+
+                    if (prevSection){
+                        container.insertBefore(currentSection, prevSection);
+                        updateSectionOrder();
+                    }
+                });
+            });
+
+            // Evento para mover abajo
+            document.querySelectorAll('.move-down-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const sectionId = btn.dataset.sectionId;
+                    const currentSection = document.querySelector(`[data-section-id="${sectionId}"]`);
+                    const nextSection = currentSection.nextElementSibling;
+
+                    if (nextSection){
+                        container.insertBefore(nextSection, currentSection);
+                        updateSectionOrder();
+                    }
+                });
+            });
+        }
+
+        function updateSectionOrder() {
+            const sections = Array.from(document.querySelectorAll('.section-item'));
+            const newOrder = sections.map(section => section.dataset.sectionId)
+        }
+
+        // Drag and Drop para secciones
+        function initDragAndDrop() {
+            const container = document.getElementById('sections-container');
+            let draggedItem = null;
+
+            container.querySelectorAll('.section-item').forEach(item => {
+                const handle = item.querySelector('.handle');
+                handle.addEventListener('mousedown', () => {
+                    item.setAttribute('draggable', 'true');
+                });
+                
+                item.addEventListener('dragstart', function() {
+                    draggedItem = this;
+                    setTimeout(() => {
+                        this.style.opacity = '0.5';
+                    }, 0);
+                });
+                
+                item.addEventListener('dragend', function() {
+                    this.style.opacity = '1';
+                    this.removeAttribute('draggable');
+                });
+            });
+
+            container.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                const afterElement = getDragAfterElement(container, e.clientY);
+                if (afterElement == null) {
+                    container.appendChild(draggedItem);
+                } else {
+                    container.insertBefore(draggedItem, afterElement);
+                }
+            });
+        }
+
+        function getDragAfterElement(container, y) {
+            const draggableElements = [...container.querySelectorAll('.section-item:not(.dragging)')];
+            
+            return draggableElements.reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = y - box.top - box.height / 2;
+                if (offset < 0 && offset > closest.offset) {
+                    return { offset: offset, element: child };
+                } else {
+                    return closest;
+                }
+            }, { offset: Number.NEGATIVE_INFINITY }).element;
+        }
+
+        // Gestión de modales
+        function initModals() {
+            const modal = document.getElementById('new-section-modal');
+            const openBtn = document.getElementById('add-section-btn');
+            const closeBtn = document.getElementById('close-modal');
+            const cancelBtn = document.getElementById('cancel-modal');
+            const confirmBtn = document.getElementById('confirm-modal');
+
+            openBtn.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+
+            cancelBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+
+            confirmBtn.addEventListener('click', () => {
+                // Aquí iría la lógica para crear la nueva sección
+                modal.classList.add('hidden');
+                // createNewSection();
+            });
+        }
+
+        // Actualizar vista previa
+        function updatePreview() {
+            // Implementación para actualizar la vista previa en tiempo real
+            console.log('Actualizando vista previa...');
+        }
+
+        // Ejemplo de función para cargar secciones desde API
+        function loadSections() {
+            // fetch('/api/sections')
+            //   .then(response => response.json())
+            //   .then(data => {
+            //       appState.sections = data;
+            //       renderSections();
+            //   });
+        }
+
+        // Ejemplo de función para renderizar secciones
+        function renderSections() {
+            // Lógica para renderizar secciones basadas en appState.sections
+        }
+    </script>
+</body>
+</html>
