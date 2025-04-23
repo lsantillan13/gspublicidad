@@ -83,8 +83,45 @@
                         </a>
                     </li>
                 </ul>
+                <div class="container w-100 h-auto bg-white/30 p-4">
+                    <h3 class="font-bold text-cyan-400">Estado del proyecto:</h3>
+                    <div id="project-status-info">
+                      </div>
+                  </div>
+                  
+                  <script>
+                    function fetchGitHubCommitInfo() {
+                      const repoOwner = 'lsantillan13'; // Reemplaza con tu nombre de usuario de GitHub
+                      const repoName = 'GSPublicidad'; // Reemplaza con el nombre de tu repositorio
+                      const statusContainer = document.getElementById('project-status-info');
+                  
+                      fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/commits?per_page=1`)
+                        .then(response => response.json())
+                        .then(data => {
+                          if (data && data.length > 0) {
+                            const latestCommit = data[0];
+                            const lastUpdate = new Date(latestCommit.commit.author.date).toLocaleDateString();
+                            const commitMessage = latestCommit.commit.message;
+                  
+                            statusContainer.innerHTML = `
+                              <p class="text-sm text-gray-100 font-semibold">Último Commit: <i class="not-italic text-gray-300">${lastUpdate}</i> </p>
+                              <p class="text-sm text-gray-100 font-semibold">Detalle: <i class="not-italic text-gray-300">${commitMessage}</i></p>
+                            `;
+                          } else {
+                            statusContainer.innerHTML = '<p>No se pudo obtener la información del commit.</p>';
+                          }
+                        })
+                        .catch(error => {
+                          console.error('Error al obtener el último commit:', error);
+                          statusContainer.innerHTML = '<p>Error al cargar la información del commit.</p>';
+                        });
+                    }
+                  
+                    // Llama a la función para que se ejecute cuando la página cargue
+                    fetchGitHubCommitInfo();
+                  </script>
                 <ul class="relative w-100">
-                    <li class="relative top-64 w-full">
+                    <li class="relative top-36 w-full">
 
                         <!-- Local Anchor redirect -->
                         <!-- <a href="/" class="flex p-2 justify-between bg-gray-700 rounded w-100 bg-gradient-to-r to-gray-700 from-lime-400/90 hover:bg-gray-600 transition-colors duration-300">
