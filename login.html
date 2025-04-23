@@ -40,12 +40,23 @@
                 // Save user session (simple example)
                 sessionStorage.setItem('user', 'admin');
                 // Redirect to home
-                window.location.href = '/admin.html';
+
+                // Redirect to admin dashboard x GitHub Pages
+                // window.location.href = '/gspublicidad/dashboard.html';
+                // Redirect to dash via local server
+                   window.location.href = '/dashboard.html';
             } else {
                 // Show login error
                 alert('Invalid email or password');
             }
         });
     </script>
+
+
+    <!-- let realtivePATH = /gspublicidad/index.html ---->
+    <!-- let realtivePATH = /gspublicidad/login.html ---->
+
+    <!-- let realtivePATH = /gspublicidad/dashboard.html ---->
+    <!-- let realtivePATH = /gspublicidad/admin.html ---->
 </body>
 </html>
