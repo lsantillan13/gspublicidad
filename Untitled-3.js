@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TULOGO | Rediseño Inspirado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .glitch-text {
+            text-shadow: 2px 2px 0 orange, -2px -2px 0 red;
+        }
+        .hover-3d:hover {
+            transform: perspective(500px) rotateX(5deg) rotateY(-5deg);
+        }
+    </style>
+</head>
+<body class="font-thin text-gray-700">
+    <!-- Header Glitch Style -->
+    <header class="fixed w-full z-50 bg-opacity-90 backdrop-blur-md py-3 px-6 bg-[#fcfdfc]  border-b-gray-300 shadow-md">
+
+        <div class="flex justify-center pb-4">
+            <a href="#" class="text-2xl text-cyan-900 font-bold glitch-text">GS</a>
+            <p class="text-neutral-700 text-2xl ml-2 mr-1">|</p>
+            <p class="text-2xl font-light text-gray-800">Soluciones Gráficas</p>
+        </div>
+
+        <section class="container mx-auto justify-between items-center flex">
+
+            
+            <div class="flex justify-start">
+                <button class="hover:text-[#00FFEE] hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+            </div>
+                   
+            <nav class="hidden md:flex space-x-8 justify-center">                   
+                <a href="#" class="hover:text-[#4d7294] font-semibold transition-all">HOME</a>
+                <!-- <a href="#" class="hover:text-[#4d7294] text-red-400 font-black transition-all">SALE</a> -->
+                <a href="#" class="hover:text-[#4d7294] font-normal transition-all">PRODUCTOS</a>
+                <a href="#" class="hover:text-[#ce7e00] font-normal transition-all">EGRESADOS / MAYORISTAS</a>
+                <a href="#" class="hover:text-[#ce7e00] font-normal transition-all">DISEÑOS CON TU LOGO</a>
+                <a href="#" class="hover:text-[#ce7e00] font-normal transition-all">FAQ</a>
+                <a href="#" class="hover:text-[#4d7294] font-normal transition-all">CONTACTO</a>
+            </nav>
+            
+
+            <div class="flex justify-start">
+                <button class="hover:text-[#00FFEE]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+
+                <button class="hover:text-[#00FFEE] ml-4">
+
+                    <!-- Local Anchor redirect -->
+                    <a href="./login.html">
+                        <img src="./btn.png" alt="" srcset="" class="h-6 w-6">
+                    </a>
+
+                     <!-- GitHub Anchor redirect -->
+                        <!-- <a href="/gspublicidad/login.html">
+                            <img src="./btn.png" alt="" srcset="" class="h-6 w-6">
+                        </a> -->
+                    
+                </button>
+
+            </div>
+        </section>
+    </header>
+
+    <section class="absolute mt-28 container">
+
+        <section class="relative mx-20 flex justify-center">
+            <img src="./Captura de pantalla 2025-04-09 131125.png" class="w-100 object-cover saturate-75"/>
+        </section>
+
+        <section class="h-100 w-full mt-8 ">
+            <h2 class="text-center w-full font-bold text-3xl">Las Mejores Propuestas para tu Empresa</h2>
+
+            <div class="w-100 mx-20 flex">
+                <div>
+                    <p class="font-bold underline mt-1 underline-offset-t-4 decoration-1 w-max text-black">Principales categorías</p>
+                    <ul class="grid grid-cols-1 gap-2 ml-2 mt-2 text-start font-semibold">
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Vuelta al Cole</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Aire Libre</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Boligrafos</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Ecologicos</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Herramientas</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Marroquineria</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Oficina</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Hogar</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Indumentaria</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Térmicos</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Llaveros y Cintas</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Tecnología</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Pines e Identificadores</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Porta documentos</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Juegos</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Premium Kits</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-orange-400">Salud y Seguridad</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="w-full h-auto mx-24 mt-1 container">
+                    <div class="m-4 grid grid-cols-4 gap-6" id="product-container">
+                    </div>
+                </div>   
+            </div>
+        </section>
+
+        <section class="">
+    <!-- Sección Promoción -->
+    <section class="py-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <!-- Encabezado -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">
+                PROMOCIONA TU EMPRESA
+            </h1>
+            <p class="text-xl text-blue-600 font-medium">
+                Somos fabricantes • Entrega inmediata • Todo con tu logo
+            </p>
+        </div>
+
+        <!-- Grid de Productos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Producto 1: Banderas -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-300 flex items-center justify-center">
+                    <span class="text-white text-2xl font-bold">BANDERAS</span>
+                </div>
+                <div class="px-2 pt-2 pb-4">
+                    <p class="text-gray-600 mb-1">Impresión full color • Materiales premium</p>
+                    <p class="text-sm text-gray-500">Desde 50 unidades</p>
+                </div>
+                <div class="flex justify-center pt-2">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white w-full py-2 rounded-lg transition-colors">
+                        Ver productos
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 2: Banners -->
+            <div class="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="h-auto flex items-center justify-center">
+                    <img src="https://i.postimg.cc/hzgP68CW/0001-portabanner.png"/>
+                </div>
+                <div class="px-2 pt-2 pb-4">
+                    <span class="text-gray-700 text-center text-2xl font-semibold"><p>BANNERS</p></span>
+                    <p class="text-gray-600 mb-1">Impresión full color • Resistente a la intemperie</p>
+                    <p class="text-sm text-gray-500">Diseño personalizado</p>
+                </div>
+                <div class="text-center p-2">
+                    <a href="#" class="inline-flex items-center px-8 py-3 bg-primary hover:bg-secondary text-black text-lg font-semibold rounded-full transition-colors shadow hover:shadow-xl">
+                        VER TODOS LOS PRODUCTOS
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 3: Fly Banners -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-300 flex items-center justify-center">
+                    <span class="text-white text-2xl font-bold">FLY BANNERS</span>
+                </div>
+                <div class="px-2 pt-2 pb-4">
+                    <p class="text-gray-600 mb-1">Impresión full color • Ideal para eventos</p>
+                    <p class="text-sm text-gray-500">Montaje incluido</p>
+                </div>
+                <div class="pt-2 flex justify-center w-full">
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white w-full py-2 rounded-lg transition-colors">
+                        Ver Catálogo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nota adicional -->
+        <div class="mt-2 text-center bg-blue-50/10 p-6 rounded-lg">
+            <p class="text-blue-800 font-medium">
+                ¿Necesitas algo diferente? <a href="#" class="text-blue-600 underline">Diseñamos productos 100% personalizados</a> para tu marca.
+            </p>
+        </div>
+    </section>
+
+        </section>
+
+        <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <!-- Encabezado -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    ARTÍCULOS PROMOCIONALES
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Tenemos el adecuado para tu estrategia promocional
+                </p>
+            </div>
+    
+            <!-- Grid de Categorías -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
+                <!-- Categoría 1 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="h-40 bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center">
+                        <span class="text-5xl">👕</span>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-lg text-gray-800 text-center">Remeras</h3>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                </div>
+    
+                <!-- Categoría 2 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="h-40 bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center">
+                        <span class="text-5xl">🧢</span>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-lg text-gray-800 text-center">Gorras</h3>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                </div>
+    
+                <!-- Categoría 3 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="h-40 bg-gradient-to-br from-yellow-100 to-yellow-50 flex items-center justify-center">
+                        <span class="text-5xl">🎗️</span>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-lg text-gray-800 text-center">Cintas colgantes</h3>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                </div>
+    
+                <!-- Categoría 4 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="h-40 bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center">
+                        <span class="text-5xl">🖊️</span>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-lg text-gray-800 text-center">Bolígrafos</h3>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                </div>
+    
+                <!-- Categoría 5 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <div class="h-40 bg-gradient-to-br from-purple-100 to-purple-50 flex items-center justify-center">
+                        <span class="text-5xl">🍬</span>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="font-semibold text-lg text-gray-800 text-center">Caramáfolas</h3>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                </div>
+            </div>
+    
+            <!-- Botón CTA -->
+            <div class="text-center">
+                <a href="#" class="inline-flex items-center px-8 py-3 bg-primary hover:bg-secondary text-black text-lg font-semibold rounded-full transition-colors shadow-lg hover:shadow-xl">
+                    VER TODOS LOS PRODUCTOS
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+
+            
+    
+        </section>
+
+        <!-- Sección Productos Industriales -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <!-- Título principal -->
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+        EQUIPAMIENTO INDUSTRIAL PERSONALIZADO
+      </h2>
+  
+      <!-- Grid de productos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Producto 1: Calzados -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 group">
+          <div class="h-48 bg-gradient-to-r from-blue-50 to-blue-100 flex items-center justify-center relative">
+            <span class="text-6xl">👞</span>
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">CALZADOS</h3>
+            <p class="text-gray-600 mb-4">Calzados de seguridad industrial</p>
+            <button class="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors flex items-center justify-center">
+              Ver producto
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Producto 2: Mamelucos -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 group">
+          <div class="h-48 bg-gradient-to-r from-gray-50 to-gray-100 flex items-center justify-center relative">
+            <span class="text-6xl">👔</span>
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">MAMELUCOS</h3>
+            <p class="text-gray-600 mb-4">Mamelucos gabardina gráfa</p>
+            <button class="w-full py-2 bg-gray-700 hover:bg-gray-800 text-white rounded-lg transition-colors flex items-center justify-center">
+              Ver producto
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Producto 3: Bolsos -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 group">
+          <div class="h-48 bg-gradient-to-r from-yellow-50 to-yellow-100 flex items-center justify-center relative">
+            <span class="text-6xl">👜</span>
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">BOLSOS</h3>
+            <p class="text-gray-600 mb-4">Bolso de trabajo petrolero, con tu logo</p>
+            <button class="w-full py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded-lg transition-colors flex items-center justify-center">
+              Ver producto
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Producto 4: Chalecos y Camperas -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 group">
+          <div class="h-48 bg-gradient-to-r from-red-50 to-red-100 flex items-center justify-center relative">
+            <span class="text-6xl">🧥</span>
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">CHALECOS Y CAMPERAS</h3>
+            <p class="text-gray-600 mb-4">Confecciones especiales con tu logo</p>
+            <button class="w-full py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors flex items-center justify-center">
+              Ver producto
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Producto 5: Camperas Softshell -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 group">
+          <div class="h-48 bg-gradient-to-r from-purple-50 to-purple-100 flex items-center justify-center relative">
+            <span class="text-6xl">🧣</span>
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">CAMPERAS SOFTSHELL</h3>
+            <p class="text-gray-600 mb-4">Confecciones especiales - Todo con tu logo</p>
+            <button class="w-full py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors flex items-center justify-center">
+              Ver producto
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Producto 6: CTA Especial -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 group border-2 border-dashed border-gray-300 flex flex-col items-center justify-center p-6 text-center">
+          <div class="bg-blue-100 p-4 rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">¿BUSCAS ALGO ESPECÍFICO?</h3>
+          <p class="text-gray-600 mb-4">Personalizamos cualquier producto industrial</p>
+          <button class="px-6 py-2 bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+            Consultar
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+        
+
+    <!-- Sección Proceso de Personalización -->
+    <section class="py-4 px-4 sm:px-6 lg:px-8 mx-auto bg-gray-300/70 w-full">
+        <section class="mx-32">
+        <!-- Título -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+                Cómo creamos tu producto paso a paso
+            </h2>
+            <p class="mt-4 text-lg text-gray-600">
+                Un proceso sencillo y transparente para garantizar resultados excepcionales.
+            </p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="relative h-full">
+
+        <container class="flex justify-end absolute right-0 h-100">
+            <div class="bg-gray-100 rounded-xl overflow-hidden ">
+                <div class="aspect-w-16 aspect-h-10 pt-16">
+                    <iframe class="w-full h-96" src="https://www.youtube.com/embed/ejemplo" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="p-6 text-center">
+                    <p class="text-gray-600">Mira cómo personalizamos productos para nuestros clientes</p>
+                </div>
+            </div>
+        </container>
+
+            <!-- Línea de tiempo -->
+            <div class="hidden sm:block absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200"></div>
+
+            <!-- Paso 1 -->
+            <div class="flex flex-col sm:flex-row items-center mb-16">
+                <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white text-xl font-bold mb-4 sm:mb-0">
+                    1
+                </div>
+                <div class="sm:ml-8 text-center sm:text-left">
+                    <h3 class="text-xl font-semibold text-gray-900">Consulta</h3>
+                    <p class="mt-2 text-gray-600">
+                        Analizamos tus necesidades y objetivos para definir el producto perfecto.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="flex flex-col sm:flex-row items-center mb-16">
+                <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white text-xl font-bold mb-4 sm:mb-0">
+                    2
+                </div>
+                <div class="sm:ml-8 text-center sm:text-left">
+                    <h3 class="text-xl font-semibold text-gray-900">Diseño</h3>
+                    <p class="mt-2 text-gray-600">
+                        Creamos propuestas personalizadas con tu marca y estilo.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="flex flex-col sm:flex-row items-center mb-16">
+                <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white text-xl font-bold mb-4 sm:mb-0">
+                    3
+                </div>
+                <div class="sm:ml-8 text-center sm:text-left">
+                    <h3 class="text-xl font-semibold text-gray-900">Aprobación</h3>
+                    <p class="mt-2 text-gray-600">
+                        Revisamos juntos los detalles hasta que el diseño sea perfecto.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Paso 4 -->
+            <div class="flex flex-col sm:flex-row items-center mb-16">
+                <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white text-xl font-bold mb-4 sm:mb-0">
+                    4
+                </div>
+                <div class="sm:ml-8 text-center sm:text-left">
+                    <h3 class="text-xl font-semibold text-gray-900">Producción</h3>
+                    <p class="mt-2 text-gray-600">
+                        Fabricamos tu producto con materiales de alta calidad.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Paso 5 -->
+            <div class="flex flex-col sm:flex-row items-center">
+                <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white text-xl font-bold mb-4 sm:mb-0">
+                    5
+                </div>
+                <div class="sm:ml-8 text-center sm:text-left">
+                    <h3 class="text-xl font-semibold text-gray-900">Entrega</h3>
+                    <p class="mt-2 text-gray-600">
+                        Enviamos los productos terminados a tu ubicación.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+</section>
+<!-- Sección Contacto -->
+<section class="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 lg:gap-12">
+      <!-- Columna 1: Dirección -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+        <div class="flex items-center mb-4">
+          <div class="bg-blue-100 p-3 rounded-full mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800">DÓNDE ESTAMOS</h3>
+        </div>
+        <div class="space-y-2 text-gray-600">
+          <p class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 mt-0.5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+            </svg>
+            San Martín 4379 Nqn<br>Neuquén / Patagonia Argentina
+          </p>
+          <p class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            consulogo@gspublicidad.com.ar
+          </p>
+          <p class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+            </svg>
+            0299 4453005
+          </p>
+        </div>
+      </div>
+  
+      <!-- Columna 2: Horarios -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+        <div class="flex items-center mb-4">
+          <div class="bg-green-100 p-3 rounded-full mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800">HORARIOS</h3>
+        </div>
+        <div class="space-y-3 text-gray-600">
+          <p class="font-medium text-gray-700">Horario corrido</p>
+          <p>De Lunes a Viernes</p>
+          <p class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+            </svg>
+            09:00 a 17:00 hs
+          </p>
+        </div>
+      </div>
+  
+      <!-- Columna 3: WhatsApp -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+        <div class="flex items-center mb-4">
+          <div class="bg-green-100 p-3 rounded-full mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800">WHATSAPP</h3>
+        </div>
+        <div class="space-y-3 text-gray-600">
+          <div class="flex items-start">
+            <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">F</span>
+            <div>
+              <p class="font-medium">Florencia</p>
+              <a href="https://wa.me/542994024762" class="text-blue-600 hover:underline">299 4024762</a>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">C</span>
+            <div>
+              <p class="font-medium">Carlos</p>
+              <a href="https://wa.me/542994380235" class="text-blue-600 hover:underline">299 4380235</a>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">C</span>
+            <div>
+              <p class="font-medium">Carolina (Bahía Blanca)</p>
+              <a href="https://wa.me/542914126766" class="text-blue-600 hover:underline">291 4126766</a>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">A</span>
+            <div>
+              <p class="font-medium">Administrador</p>
+              <a href="https://wa.me/542995499076" class="text-blue-600 hover:underline">299 5499076</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Mapa (opcional) -->
+    <div class="mt-12 max-w-6xl mx-auto rounded-xl overflow-hidden shadow-md">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3108.123456789012!2d-68.12345678901234!3d-38.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDA3JzI0LjQiUyA2OMKwMDcnMjQuNCJX!5e0!3m2!1sen!2sar!4v1234567890123!5m2!1sen!2sar" 
+              width="100%" 
+              height="400" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+
+    
+
+
+
+
+
+
+    <!-- Hero Section with Video Background -->
+    <section class="min-h-screen pt-20 flex items-center relative overflow-hidden hidden">
+        <div class="absolute inset-0 z-0">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-70">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-fabric-textile-background-17615-large.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-5xl md:text-8xl font-bold mb-6 leading-tight">
+                <span class="text-[#00FFEE]">REDEFINE</span><br>
+                <span class="text-[#FF00F5]">YOUR STYLE</span>
+            </h1>
+            <a href="#" class="inline-block bg-white text-black font-bold py-3 px-8 hover:bg-transparent hover:text-white border-2 border-white transition-all mt-8">
+                EXPLORAR COLECCIONES
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section class="py-20 bg-[#0A0A0A] hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center">
+                <span class="text-[#00FFEE]">//</span> COLECCIONES <span class="text-[#FF00F5]">//</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="hover-3d transition-all shadow-lg duration-500 relative group overflow-hidden h-96">
+                    <!-- <img src="https://source.unsplash.com/random/600x800/?fashion" alt="Colección 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000"> -->
+                    <p class="text-white text-center relative h-64 md:h-80 top-32">Imagen de producto</p>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-8">
+                        <h3 class="text-2xl font-bold">URBAN WEAR</h3>
+                    </div>
+                </div>
+                
+                <div class="hover-3d transition-all duration-500 relative group overflow-hidden h-96">
+                    <!-- <img src="https://source.unsplash.com/random/600x800/?streetwear" alt="Colección 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000"> -->
+                    <p class="text-white text-center relative h-64 md:h-80 top-32">Imagen de producto</p>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-8">
+                        <h3 class="text-2xl font-bold">LIMITED EDITION</h3>
+                    </div>
+                </div>
+                
+                <div class="hover-3d transition-all duration-500 relative group overflow-hidden h-96">
+                    <!-- <img src="https://source.unsplash.com/random/600x800/?sneakers" alt="Colección 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000"> -->
+                    <p class="text-white text-center relative h-64 md:h-80 top-32">Imagen de producto</p>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-8">
+                        <h3 class="text-2xl font-bold">ACCESORIOS</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-20 hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center">
+                <span class="text-[#FF00F5]">⋆</span> PRODUCTOS DESTACADOS <span class="text-[#00FFEE]">⋆</span>
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="group relative">
+                    <div class="overflow-hidden shadow-lg mb-4">
+                        <!-- <img src="https://source.unsplash.com/random/400x500/?hoodie" alt="Producto 1" class="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition duration-700"> -->
+                        <p class="text-black text-center relative h-64 md:h-80 top-32">Imagen de producto</p>
+                    </div>
+                    <h3 class="font-bold">HOODIE BASIC</h3>
+                    <p class="text-[#00FFEE]">$24.999</p>
+                    <div class="absolute top-4 right-4 bg-[#FF00F5] text-black px-2 py-1 text-xs font-bold">NUEVO</div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="group relative">
+                    <div class="overflow-hidden shadow-lg mb-4">
+                        <!-- <img src="https://source.unsplash.com/random/400x500/?tshirt" alt="Producto 2" class="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition duration-700"> -->
+                        <p class="text-black text-center relative h-64 md:h-80 top-32">Imagen de producto</p>
+                    </div>
+                    <h3 class="font-bold">T-SHIRT LOGO</h3>
+                    <p class="text-[#00FFEE]">$12.999</p>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="group relative">
+                    <div class="overflow-hidden shadow-lg mb-4">
+                        <!-- <img src="https://source.unsplash.com/random/400x500/?cap" alt="Producto 3" class="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition duration-700"> -->
+                        <p class="text-black text-center relative h-64 md:h-80 top-32">Imagen de producto</p>
+                    </div>
+                    <h3 class="font-bold">CAP BLACK</h3>
+                    <p class="text-[#00FFEE]">$8.999</p>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="group relative">
+                    <div class="overflow-hidden shadow-lg mb-4">
+                        <!-- <img src="https://source.unsplash.com/random/400x500/?pants" alt="Producto 4" class="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition duration-700"> -->
+                        <p class="text-black text-center relative h-64 md:h-80 top-32">Imagen de producto</p>
+                    </div>
+                    <h3 class="font-bold">CARGO PANTS</h3>
+                    <p class="text-[#00FFEE]">$18.999</p>
+                    <div class="absolute top-4 right-4 bg-black text-[#FF00F5] px-2 py-1 text-xs font-bold">-30%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-[#00FFEE]">TULOGO</h3>
+                <p class="text-gray-400">Redefiniendo el estilo urbano desde 2020.</p>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4">TIENDA</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-[#FF00F5]">Todos los productos</a></li>
+                    <li><a href="#" class="hover:text-[#FF00F5]">Novedades</a></li>
+                    <li><a href="#" class="hover:text-[#FF00F5]">Ofertas</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4">AYUDA</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-[#00FFEE]">Contacto</a></li>
+                    <li><a href="#" class="hover:text-[#00FFEE]">Envíos</a></li>
+                    <li><a href="#" class="hover:text-[#00FFEE]">Cambios</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4">CONÉCTATE</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full border border-[#00FFEE] flex items-center justify-center hover:bg-[#00FFEE] hover:text-black">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-[#FF00F5] flex items-center justify-center hover:bg-[#FF00F5] hover:text-black">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-[#00FFEE] flex items-center justify-center hover:bg-[#00FFEE] hover:text-black">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container mx-auto px-6 mt-12 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">
+            © 2023 TULOGO. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5491112345678" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-[#128C7E] transition transform hover:scale-110 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+    </a>
+
+    
+
+
+    <script>
+        const PRODUCTS = [
+        { 
+            name: "Remera Sahiora",
+            isNew: true,
+            image: "https://i.postimg.cc/6yz6SGZF/sahiora-e1499094483742.jpg"
+        },{ 
+            name: "Remera Aerolineas Argentinas",
+            isNew: false,
+            image: "https://i.postimg.cc/7GgwNCDs/aerolineas-argentinas-2-e1499095124403.jpg"
+        },{
+            name: "Remera Flipper",
+            isNew: false,
+            image: "https://i.postimg.cc/vxbM2QZQ/fliper-e1499093047564.jpg"
+        },{
+            name: "Remera Todo Hierro",
+            isNew: false,
+            image: "https://i.postimg.cc/NLcHvmy0/todo-hierro-e1499094591744.jpg"
+        },{ 
+            name: "Remera Eat, Sleep & Tennis",
+            isNew: true,
+            image: "https://i.postimg.cc/nXCsG1W3/tenis-3-e1505500652685.png",
+            onOffer: true
+        },{
+            name: "Remera Personalizable Musically",
+            isNew: true,
+            image: "https://i.postimg.cc/njYMhSsh/musically.jpg",
+            onOffer: true
+        },{
+            name: "Remera Terra Gimnasio",
+            image: "https://i.postimg.cc/RqdNr85P/terra-e1499093214289.jpg",
+        }]
+
+        const productContainer = document.getElementById('product-container');
+        PRODUCTS.push({
+            name: "Ver todo",
+            isButton: true,
+        });
+
+        PRODUCTS.forEach(product => {
+            const productDiv = document.createElement('div');
+            productDiv.className = 'w-auto h-auto justify-center m-1 shadow-sm hover:saturate-200 hover:border border-black/50';
+
+            if (product.isButton) {
+                productDiv.innerHTML = `
+                    <button class="w-full h-[86%] relative h-42 bg-black/70 text-white font-bold hover:bg-black/60">
+                        ${product.name}
+                    </button>
+                `;
+            } else {
+                productDiv.innerHTML = `
+                <a href="#" class="hover:outline">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-42 object-cover mb-2">
+                    <p class="pt-1 pb-2 font-normal w-full text-sm text-center">${product.name}</p>
+                </a>
+                `;
+            }
+
+            productContainer.appendChild(productDiv);
+        });       
+    </script>
+
+    
+</body>
+</html>
