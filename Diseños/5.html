@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="http://gspublicidad.com.ar/wp-content/uploads/2021/04/egresados-3.png">
+    <title>Egresados 2024 - Campera Exclusiva</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E8C547;
+            --secondary: #30323D;
+            --accent: #CD5D67;
+            --light: #F8F9FA;
+            --dark: #1A1A2E;
+            --overlay: rgba(26, 26, 46, 0.9);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            overflow-x: hidden;
+            background-color: var(--dark);
+        }
+        
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            isolation: isolate;
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('http://gspublicidad.com.ar/wp-content/uploads/2021/04/egresados-3.png') center/cover no-repeat fixed;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-container {
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .logo {
+            max-width: 250px;
+            height: auto;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: 1px;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.6);
+            animation: slideUp 1s 0.3s ease-out both;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-weight: 300;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fadeIn 1s 0.8s forwards;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 1.1rem 3rem;
+            border-radius: 2px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(232, 197, 71, 0.3);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s 1s forwards;
+            text-transform: uppercase;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(232, 197, 71, 0.4);
+            background: var(--primary);
+        }
+        
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+        
+        .cta-button:hover::after {
+            transform: translateX(100%);
+        }
+        
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: var(--primary);
+            margin: 2rem auto;
+            opacity: 0;
+            animation: fadeIn 1s 0.6s forwards;
+        }
+        
+        .year-badge {
+            display: inline-block;
+            background: rgba(205, 93, 103, 0.2);
+            color: var(--light);
+            border: 1px solid var(--accent);
+            padding: 0.6rem 1.8rem;
+            border-radius: 2px;
+            margin-top: 3rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            opacity: 0;
+            animation: fadeIn 1s 1.3s forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 600px;
+                background-attachment: scroll;
+            }
+            
+            .logo {
+                max-width: 180px;
+            }
+            
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .cta-button {
+                padding: 1rem 2.5rem;
+                font-size: 1rem;
+            }
+            
+            .year-badge {
+                margin-top: 2rem;
+                padding: 0.5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="http://gspublicidad.com.ar/wp-content/uploads/2019/10/logoGSalta.png" alt="GS Publicidad" class="logo">
+            </div>
+            
+            <h1 class="hero-title">Egresados <span>2024</span></h1>
+            
+            <div class="divider"></div>
+            
+            <p class="hero-subtitle">Tu campera exclusiva de graduación - Un recuerdo único de tu paso por la UPD</p>
+            
+            <a href="#promociones" class="cta-button">Ver promociones</a>
+            
+            <div class="year-badge">Edición Limitada</div>
+        </div>
+    </section>
+</body>
+</html>

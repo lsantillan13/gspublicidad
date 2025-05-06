@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novedades | Indumentaria & Soluciones Gráficas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .text-outline {
+            -webkit-text-stroke: 1px #ffffff;
+            color: transparent;
+        }
+        .hover-grow {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .hover-grow:hover {
+            transform: translateY(-3px);
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        .diagonal-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .badge-original {
+            background-color: #3B82F6;
+            color: white;
+            border-color: #2563EB;
+        }
+        .btn-primary-original {
+            background-color: #3B82F6;
+            color: white;
+        }
+        .btn-primary-original:hover {
+            background-color: #2563EB;
+        }
+        .btn-secondary-original {
+            border-color: #3B82F6;
+            color: #3B82F6;
+        }
+        .btn-secondary-original:hover {
+            background-color: #3B82F610;
+            border-color: #2563EB;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Bebas Neue', 'sans-serif'],
+                        'body': ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#3B82F6',
+                        'primary-dark': '#2563EB',
+                        'secondary': '#10B981',
+                        'dark': '#1F2937',
+                        'light': '#F9FAFB',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body bg-dark text-white">
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[800px] overflow-hidden flex items-center justify-center bg-gradient-to-br from-dark to-gray-900">
+        <!-- Floating Elements -->
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/10 blur-3xl opacity-30 animate-float"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-72 h-72 rounded-full bg-secondary/10 blur-3xl opacity-30 animate-float delay-2000"></div>
+        
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 opacity-5 bg-[length:40px_40px] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)]"></div>
+        
+        <!-- Main Content -->
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-5xl mx-auto text-center">
+                <div class="mb-8 animate__animated animate__fadeIn">
+                    <!-- Badge -->
+                    <div class="inline-block px-6 py-2 mb-8 text-sm font-semibold tracking-widest text-white uppercase rounded-full badge-original">
+                        COLECCIÓN 2025
+                    </div>
+                    
+                    <!-- Main Headline -->
+                    <h1 class="text-6xl md:text-8xl lg:text-9xl font-display mb-6 leading-none tracking-tighter">
+                        <span class="block text-outline">NOVEDADES</span>
+                        <span class="block mt-2 text-white glow-text">EXCLUSIVAS</span>
+                    </h1>
+                    
+                    <!-- Subheadline -->
+                    <p class="text-xl md:text-2xl font-light tracking-wide mb-8 max-w-2xl mx-auto opacity-90 animate__animated animate__fadeIn animate__delay-1s">
+                        Descubre nuestras <span class="font-semibold text-primary">ediciones limitadas</span> y <span class="font-semibold text-secondary">soluciones gráficas</span> de vanguardia
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row justify-center gap-6 mt-12 animate__animated animate__fadeInUp animate__delay-1s">
+                        <a href="#coleccion" class="hover-grow px-12 py-4 btn-primary-original font-bold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-3">
+                            <span>VER PROMOCIONES</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        
+                        <a href="#edicion-limitada" class="hover-grow px-12 py-4 btn-secondary-original font-medium rounded-full transition-all duration-300 flex items-center justify-center gap-3 backdrop-blur-sm border">
+                            <span>EDICIÓN LIMITADA</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scrolling Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow z-10">
+            <div class="flex flex-col items-center">
+                <span class="text-xs tracking-widest text-white/50 mb-2">EXPLORA MÁS</span>
+                <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

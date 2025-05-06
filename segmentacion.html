@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segmentación de Productos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // SPA Navigation Logic
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            // Mostrar la sección seleccionada
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <!-- Contenedor principal -->
+    <div class="max-w-6xl mx-auto p-8">
+        <!-- Título principal -->
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl font-extrabold text-gray-900">Segmentación de Productos</h1>
+            <p class="text-lg text-gray-600 mt-2">
+                Explora nuestras categorías de productos y servicios especializados.
+            </p>
+        </header>
+
+        <!-- Navegación -->
+        <nav class="flex flex-wrap justify-center gap-4 mb-8">
+            <button onclick="showSection('indumentaria-trabajo')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Indumentaria de Trabajo
+            </button>
+            <button onclick="showSection('indumentaria-deportiva')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Indumentaria Deportiva
+            </button>
+            <button onclick="showSection('egresados')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Egresados
+            </button>
+            <button onclick="showSection('calzados')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Calzados
+            </button>
+            <button onclick="showSection('regaleria-empresarial')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Regalería Empresarial
+            </button>
+            <button onclick="showSection('articulos-publicitarios')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Artículos Publicitarios
+            </button>
+            <button onclick="showSection('articulos-hogar')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Artículos para el Hogar
+            </button>
+            <button onclick="showSection('articulos-hospitalarios')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Artículos Hospitalarios
+            </button>
+            <button onclick="showSection('carteleria')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Cartelería
+            </button>
+            <button onclick="showSection('marroquineria')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Marroquinería
+            </button>
+        </nav>
+
+        <!-- Secciones -->
+        <div id="indumentaria-trabajo" class="section">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Indumentaria de Trabajo</h2>
+            <p class="text-lg text-gray-700 mb-4">Explora nuestra línea de indumentaria diseñada para el ámbito laboral.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Esqueleto de productos -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <div class="h-32 bg-gray-200 rounded mb-4"></div>
+                    <h3 class="text-xl font-semibold text-gray-800">Producto 1</h3>
+                    <p class="text-gray-600">Descripción breve del producto.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <div class="h-32 bg-gray-200 rounded mb-4"></div>
+                    <h3 class="text-xl font-semibold text-gray-800">Producto 2</h3>
+                    <p class="text-gray-600">Descripción breve del producto.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="indumentaria-deportiva" class="section hidden">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Indumentaria Deportiva</h2>
+            <p class="text-lg text-gray-700 mb-4">Descubre nuestra colección de ropa deportiva para equipos y atletas.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Esqueleto de productos -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <div class="h-32 bg-gray-200 rounded mb-4"></div>
+                    <h3 class="text-xl font-semibold text-gray-800">Producto 1</h3>
+                    <p class="text-gray-600">Descripción breve del producto.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                    <div class="h-32 bg-gray-200 rounded mb-4"></div>
+                    <h3 class="text-xl font-semibold text-gray-800">Producto 2</h3>
+                    <p class="text-gray-600">Descripción breve del producto.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="egresados" class="section hidden">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Egresados</h2>
+            <p class="text-lg text-gray-700 mb-4">Productos personalizados para egresados.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Esqueleto de productos -->
+            </div>
+        </div>
+
+        <div id="calzados" class="section hidden">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Calzados</h2>
+            <p class="text-lg text-gray-700 mb-4">Calzado cómodo y funcional para todas las ocasiones.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Esqueleto de productos -->
+            </div>
+        </div>
+
+        <div id="regaleria-empresarial" class="section hidden">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Regalería Empresarial</h2>
+            <p class="text-lg text-gray-700 mb-4">Regalos personalizados para empresas y eventos corporativos.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Esqueleto de productos -->
+            </div>
+        </div>
+
+        <div id="articulos-publicitarios" class="section hidden">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Artículos Publicitarios</h2>
+            <p class="text-lg text-gray-700 mb-4">Material promocional para destacar tu marca.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Esqueleto de productos -->
+            </div>
+        </div>
+
+        <div id="articulos-hogar" class="section hidden">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Artículos para el Hogar</h2>
+            <p class="text-lg text-gray-700 mb-4">Productos prácticos y funcionales para el hogar.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Esqueleto de productos -->
+            </div>
+        </div>
+
+        <div id="articulos-hospitalarios" class="section hidden">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Artículos Hospitalarios</h2>
+            <p class="text-lg text-gray-700 mb-4">Equipamiento y productos para el sector de la salud.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Esqueleto de productos -->
+            </div>
+        </div>
+
+        <div id="carteleria" class="section hidden">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Cartelería</h2>
+            <p class="text-lg text-gray-700 mb-4">Soluciones de cartelería para publicidad y señalización.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Esqueleto de productos -->
+            </div>
+        </div>
+
+        <div id="marroquineria" class="section hidden">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Marroquinería</h2>
+            <p class="text-lg text-gray-700 mb-4">Accesorios de cuero y productos de alta calidad.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Esqueleto de productos -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

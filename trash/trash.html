@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deportes Neuquén</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .product-card:hover .product-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
+        }
+        .product-card:hover .product-content {
+            transform: translateY(0);
+        }
+    </style>
+  <style>
+    /* Animación Fade In */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-in-up {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans leading-relaxed">
+
+  <section class="text-center py-14 px-6 fade-in-up">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4 uppercase tracking-wide">Que tu equipo sea el N° 1</h1>
+    <p class="text-lg md:text-xl mb-12 text-gray-300 max-w-3xl mx-auto">
+      Hacemos tu camiseta, tu conjunto deportivo, tu gorra, tu bolso, tu caramañola.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+        <img src="/ruta/de/la/imagen1.png" alt="Conjuntos deportivos" class="object-cover w-full h-96 transform group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+          <h2 class="text-2xl font-semibold mb-3">Conjuntos deportivos</h2>
+          <a href="#" class="bg-red-600 hover:bg-red-700 transition-colors duration-300 font-bold py-2 px-5 rounded-full self-start">Ver Producto</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+        <img src="/ruta/de/la/imagen2.png" alt="Dri fit" class="object-cover w-full h-96 transform group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+          <h2 class="text-2xl font-semibold mb-3">Dri fit</h2>
+          <a href="#" class="bg-red-600 hover:bg-red-700 transition-colors duration-300 font-bold py-2 px-5 rounded-full self-start">Ver Producto</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+        <img src="/ruta/de/la/imagen3.png" alt="Las mejores telas" class="object-cover w-full h-96 transform group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+          <h2 class="text-2xl font-semibold mb-3">Las mejores telas</h2>
+          <a href="#" class="bg-red-600 hover:bg-red-700 transition-colors duration-300 font-bold py-2 px-5 rounded-full self-start">Ver Producto</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-14 text-gray-400 text-sm md:text-base">
+      Más de 30 años de trayectoria, fabricando la indumentaria para el entrenamiento deportivo.
+    </p>
+  </section>
+  <br>
+  <br>
+  <br>
+   <section class="w-full bg-gradient-to-br from-blue-900 to-blue-700 py-16 px-4 sm:px-6 lg:px-8 animate-fade-in-up">
+        <div class="max-w-7xl mx-auto">
+            <!-- Encabezado -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">PROMOCIONA TU EMPRESA</h2>
+                <p class="text-xl text-blue-100 font-medium">
+                    Somos fabricantes • Entrega inmediata • Todo con tu logo
+                </p>
+            </div>
+            
+            <!-- Grid de Productos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Producto 1: Banderas -->
+                <div class="product-card group relative overflow-hidden rounded-xl shadow-2xl transform transition-all duration-500 hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e" alt="Banderas personalizadas" class="w-full h-80 object-cover brightness-90 group-hover:brightness-100 transition-all duration-500">
+                    <div class="product-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-500">
+                        <div class="product-content absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-white text-2xl font-bold mb-2">BANDERAS</h3>
+                            <p class="text-blue-100 mb-4">Impresión full color • Materiales premium</p>
+                            <p class="text-sm text-blue-200 mb-4">Desde 50 unidades</p>
+                            <button class="w-full bg-white text-blue-600 hover:bg-blue-50 px-6 py-2 rounded-lg font-semibold transition-colors">
+                                VER PRODUCTO
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 2: Banners -->
+                <div class="product-card group relative overflow-hidden rounded-xl shadow-2xl transform transition-all duration-500 hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3" alt="Banners publicitarios" class="w-full h-80 object-cover brightness-90 group-hover:brightness-100 transition-all duration-500">
+                    <div class="product-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-500">
+                        <div class="product-content absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-white text-2xl font-bold mb-2">BANNERS</h3>
+                            <p class="text-blue-100 mb-4">Impresión full color • Resistente a la intemperie</p>
+                            <p class="text-sm text-blue-200 mb-4">Diseño personalizado</p>
+                            <button class="w-full bg-white text-blue-600 hover:bg-blue-50 px-6 py-2 rounded-lg font-semibold transition-colors">
+                                VER PRODUCTO
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 3: Fly Banners -->
+                <div class="product-card group relative overflow-hidden rounded-xl shadow-2xl transform transition-all duration-500 hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70" alt="Fly Banners" class="w-full h-80 object-cover brightness-90 group-hover:brightness-100 transition-all duration-500">
+                    <div class="product-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-500">
+                        <div class="product-content absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-white text-2xl font-bold mb-2">FLY BANNERS</h3>
+                            <p class="text-blue-100 mb-4">Impresión full color • Ideal para eventos</p>
+                            <p class="text-sm text-blue-200 mb-4">Montaje incluido</p>
+                            <button class="w-full bg-white text-blue-600 hover:bg-blue-50 px-6 py-2 rounded-lg font-semibold transition-colors">
+                                VER PRODUCTO
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nota adicional -->
+            <div class="mt-8 text-center">
+                <p class="text-blue-100 text-lg max-w-3xl mx-auto">
+                    ¿Necesitas algo diferente? <a href="#" class="text-white font-semibold underline hover:text-blue-200 transition-colors">Diseñamos productos 100% personalizados</a> para tu marca.
+                </p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

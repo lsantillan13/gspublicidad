@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos Ingresos | Colección Exclusiva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700;900&family=Prata&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E1E1E;
+            --secondary: #E8C547;
+            --accent: #D4AF37;
+            --light: #FFFFFF;
+            --dark: #121212;
+            --overlay: rgba(30, 30, 30, 0.85);
+            --card-bg: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        .hero-container {
+            position: relative;
+            height: 100vh;
+            min-height: 900px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+        }
+
+        .text-content {
+            max-width: 1200px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .exclusive-tag {
+            display: inline-flex;
+            align-items: center;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(232, 197, 71, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exclusive-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .exclusive-tag:hover::before {
+            left: 100%;
+        }
+
+        .hero-title {
+            font-family: 'Prata', serif;
+            font-size: clamp(3.5rem, 9vw, 6rem);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            position: relative;
+            letter-spacing: 1px;
+        }
+
+        .hero-title span {
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title span::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            transform: scaleX(0);
+            transform-origin: right;
+            animation: underlineReveal 1.5s 0.5s forwards cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: var(--light);
+            padding: 1.3rem 3.5rem;
+            border-radius: 0;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary);
+            z-index: -1;
+            transform: translateY(100%);
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .cta-button:hover {
+            color: var(--dark);
+            border-color: var(--secondary);
+        }
+
+        .cta-button:hover::before {
+            transform: translateY(0);
+        }
+
+        .products-section {
+            height: 350px;
+            background: var(--dark);
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .carousel-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 1400px;
+            padding: 0 50px;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card {
+            width: 280px;
+            flex-shrink: 0;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(232, 197, 71, 0.3);
+        }
+
+        .product-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.7));
+        }
+
+        .product-info {
+            padding: 1.8rem;
+            position: relative;
+        }
+
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .product-price {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.6;
+            animation: pulse 2s infinite;
+        }
+
+        .scroll-hint::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.3);
+            margin-top: 10px;
+        }
+
+        @keyframes underlineReveal {
+            from {
+                transform: scaleX(0);
+            }
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.6;
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                opacity: 0.3;
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .carousel-container {
+                padding: 0 30px;
+            }
+            
+            .product-card {
+                width: 240px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-container {
+                min-height: 800px;
+            }
+
+            .products-section {
+                height: 300px;
+            }
+
+            .carousel-container {
+                padding: 0 20px;
+            }
+
+            .product-card {
+                width: 220px;
+            }
+
+            .product-image {
+                height: 160px;
+            }
+
+            .exclusive-tag {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.8rem;
+            }
+
+            .cta-button {
+                padding: 1.1rem 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="text-content">
+                <div class="exclusive-tag">Nueva Colección</div>
+                <h1 class="hero-title">Descubre <span>Nuestros</span><br>Nuevos Ingresos</h1>
+                <p class="hero-subtitle">Productos exclusivos cuidadosamente seleccionados para ofrecerte lo mejor en diseño, calidad y estilo</p>
+                <a href="#coleccion" class="cta-button">Explorar Ahora</a>
+            </div>
+        </div>
+
+        <div class="products-section">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Producto 1 -->
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1399&q=80');"></div>
+                        <div class="product-info">
+                            <div class="product-badge">Nuevo</div>
+                            <h3 class="product-title">Reloj de Lujo Automático</h3>
+                            <div class="product-price">$1,299.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80');"></div>
+                        <div class="product-info">
+                            <div class="product-badge">Popular</div>
+                            <h3 class="product-title">Audífonos Noise Cancelling</h3>
+                            <div class="product-price">$349.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="product-info">
+                            <div class="product-badge">Edición Limitada</div>
+                            <h3 class="product-title">Auriculares Vintage Premium</h3>
+                            <div class="product-price">$279.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 4 -->
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="product-info">
+                            <div class="product-badge">Clásico</div>
+                            <h3 class="product-title">Cámara Fotográfica Profesional</h3>
+                            <div class="product-price">$899.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 5 -->
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="product-info">
+                            <div class="product-badge">Nuevo</div>
+                            <h3 class="product-title">Zapatillas Deportivas Elite</h3>
+                            <div class="product-price">$189.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-hint">Desliza para descubrir</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.carousel-track');
+            const products = document.querySelectorAll('.product-card');
+            const productWidth = products[0].offsetWidth;
+            const gap = 30;
+            const scrollAmount = productWidth + gap;
+            
+            // Duplicar productos para efecto infinito
+            products.forEach(product => {
+                const clone = product.cloneNode(true);
+                track.appendChild(clone);
+            });
+            
+            let currentPosition = 0;
+            const totalProducts = products.length;
+            const totalWidth = (productWidth + gap) * totalProducts;
+            
+            function autoScroll() {
+                currentPosition -= 1;
+                if (currentPosition < -scrollAmount) {
+                    currentPosition = 0;
+                    track.style.transition = 'none';
+                    track.style.transform = `translateX(${currentPosition}px)`;
+                    setTimeout(() => {
+                        track.style.transition = 'transform 0.5s ease';
+                    }, 0);
+                } else {
+                    track.style.transition = 'transform 0.5s ease';
+                    track.style.transform = `translateX(${currentPosition}px)`;
+                }
+            }
+            
+            let scrollInterval = setInterval(autoScroll, 30);
+            
+            // Pausar al hacer hover
+            track.addEventListener('mouseenter', () => {
+                clearInterval(scrollInterval);
+            });
+            
+            track.addEventListener('mouseleave', () => {
+                scrollInterval = setInterval(autoScroll, 30);
+            });
+        });
+    </script>
+</body>
+</html>
