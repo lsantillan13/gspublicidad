@@ -32,7 +32,7 @@ body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, var(--overlay), var(--overlay)), 
-                url('http://gspublicidad.com.ar/wp-content/uploads/2021/04/egresados-3.png');
+                url('https://i.postimg.cc/26y1W1zY/image.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -162,7 +162,7 @@ body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
     .hero::before {
         background-attachment: scroll;
         background: linear-gradient(135deg, var(--overlay), var(--overlay)), 
-                    url('http://gspublicidad.com.ar/wp-content/uploads/2021/04/EGRESADOS-FONDO-CEL-2.png');
+                    url('https://i.postimg.cc/kGwYpY0K/image.png');
     }
     
     .hero {
