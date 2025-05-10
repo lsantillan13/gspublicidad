@@ -9,8 +9,8 @@ body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
 
 .hero {
     position: relative;
-    height: 100px;  
-    min-height: 140px;
+    height: 70vh;  
+    min-height: auto;
     color: var(--light);
     display: flex;
     align-items: center;
