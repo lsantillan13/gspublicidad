@@ -1,4 +1,4 @@
-:root { --primary: #FFD700; --secondary: #E63946; --dark: #1A1A2E; --light: #F8F9FA; --overlay: rgba(26, 26, 46, 0.85);}
+:root { --primary: #FFD700; --secondary: #E63946; --third: #ffd9001f; --fourth: #e639476a;  --dark: #1A1A2E; --light: #F8F9FA; --overlay: rgba(26, 26, 46, 0.85);}
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
 
@@ -9,7 +9,7 @@ body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
 
 .hero {
     position: relative;
-    height: 70vh;  
+    height: 100%;
     min-height: auto;
     color: var(--light);
     display: flex;
@@ -17,17 +17,42 @@ body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
     justify-content: center;
     overflow: hidden;
     isolation: isolate;
+    top: 136px;
+}
+.heroEgresados {
+    position: relative;
+    height: 100%;
+    min-height: auto;
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    isolation: isolate;
+
 }
 
-.hero .logo-container {
+.gift-section{
+    inset: 1;
+    background:
+                url('https://i.postimg.cc/6pBGQpMF/image.png');
+    background-size: fill;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -2;
+}
+
+.heroEgresados .logo-container, .hero .logo-container {
     display: flex;
     justify-content: center;
 }
-.hero .logo {
+.heroEgesados .logo, .hero .logo {
     position: relative;
 }
 
-.hero::before {
+
+
+.hero::before, .heroEgresados::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -49,6 +74,7 @@ body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
 }
 
 .hero-content {
+    width: auto;
     max-width: 1200px;
     text-align: center;
     position: relative;
